@@ -1,0 +1,85 @@
+#:kivy 2.0.0
+
+<Ball>:
+    size_hint: (None, None)
+    size: 80, 80
+
+<Goal>:
+    size_hint: (None, None)
+    size: 80, 80
+
+<BallMap>:
+    size_hint: (None, None)
+    size: 800, 800
+    Image:
+        size: self.parent.size
+        pos: self.parent.pos
+        source: root.map_image_source
+
+
+<GameScreen>:
+    #conn: app.conn
+    #midi_inputs: app.midi_inputs
+
+    BallMap:
+        id: ballMap
+
+    Goal:
+        id: goal
+        #pos: root.right - self.width, root.top - self.height
+
+    Ball:
+        id: ball
+        pos: 0, 0
+
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.size
+
+        BoxLayout:
+            size_hint_y: 0.05
+            Button:
+                id: startButton
+                text: "Game Start"
+                font_size: 24
+                on_press: root.startButton_clicked()  # ボタンをクリックした時
+
+            Button:
+                id: restartButton
+                text: "Restart"
+                font_size: 24
+                on_press: root.restartButton_clicked()  # ボタンをクリックした時
+
+            Button:
+                id: renewDBButton
+                text: "Renew events.db"
+                font_size: 24
+                on_press: root.renewDBButton_clicked()  # ボタンをクリックした時
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: 0.1
+            Label:
+                id: statusLabel
+                font_size: 16
+                color: 0, 0, 0, 1
+
+        BoxLayout:
+            size_hint_y: 0.05
+            Label:
+                id: statusLabel1
+                text: ""
+                font_size: 16
+                color: 0, 0, 0, 1
+            Label:
+                id: statusLabel2
+                text: ""
+                font_size: 16
+                color: 0, 0, 0, 1
+
+        BoxLayout:
+            canvas:
+
+

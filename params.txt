@@ -1,0 +1,9 @@
+device1=1
+device2=2
+use_midi=0
+map_data1=data/map3_0_data.txt
+map_image1=data/map3_0.png
+map_data2=data/map3_1_data.txt
+map_image2=data/map3_1.png
+map_data3=data/map3_2_data.txt
+map_image3=data/map3_2.png
